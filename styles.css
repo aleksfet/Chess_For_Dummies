@@ -218,6 +218,72 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* Improvement section: a fixed 2-by-2 grid of wider, more rectangular cards */
+.card-grid.improvement-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Trim vertical padding so the cards read as wide rectangles, not tall boxes */
+.card-grid.improvement-grid .card {
+  padding: 18px 30px;
+}
+
+/* Stack the improvement cards in a single column on smaller screens */
+@media (max-width: 600px) {
+  .card-grid.improvement-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Centered call-to-action under the improvement cards */
+.improvement-cta {
+  max-width: 640px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.improvement-cta h3 {
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+}
+
+.improvement-cta p {
+  color: var(--brown);
+  margin-bottom: 20px;
+}
+
+.improvement-cta-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Chess.com button — green branding, white text */
+.btn-chesscom {
+  background-color: #5d9948;
+  color: #fff;
+}
+
+.btn-chesscom:hover {
+  background-color: #4a7c39; /* slightly darker green */
+}
+
+/* Lichess button — light theme with subtle gray border and gold/orange hover */
+.btn-lichess {
+  background-color: #f4f4f2;
+  color: #3a3a3a;
+  border: 2px solid #cfcfcf;
+}
+
+.btn-lichess:hover {
+  background-color: #fbf3e6; /* warm, slightly orange tint */
+  border-color: #d99b3c;     /* gold/orange accent on hover */
+}
+
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--wood);
