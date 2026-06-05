@@ -327,3 +327,107 @@ body {
     padding: 50px 18px;
   }
 }
+
+/* =====================================================
+   CHESS HISTORY — LINE, BUTTON & MODAL
+   ===================================================== */
+.learn-history-line {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  color: var(--brown);
+}
+
+/* Match the inline button to the section's text-link feel */
+#historyBtn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Dim overlay behind the popup */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(74, 53, 38, 0.55);
+  z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+/* The popup card itself */
+.modal {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--card-bg);
+  border: 1px solid var(--wood);
+  border-top: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 30px 28px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.modal h3 {
+  color: var(--brown-dark);
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  padding-right: 28px;
+}
+
+.modal p {
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+
+.modal p:last-child {
+  margin-bottom: 0;
+}
+
+.modal-subtitle {
+  color: var(--brown-dark);
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.modal-terms {
+  margin: 0;
+}
+
+.modal-terms dt {
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.modal-terms dd {
+  color: var(--brown);
+  margin: 0 0 10px 0;
+}
+
+.modal-terms dd:last-child {
+  margin-bottom: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--brown);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}

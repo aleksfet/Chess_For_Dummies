@@ -52,35 +52,58 @@
   <!-- ===================== LEARN THE GAME ===================== -->
   <section id="learn" class="section">
     <h2 class="section-title">Learn the Game</h2>
-    <p class="section-intro">Everything you need to take your very first steps in chess.</p>
+    <p class="section-intro">Here are the basics you need to take your first steps in chess.</p>
 
     <div class="card-grid wide">
       <article class="card">
-        <h3>What is Chess?</h3>
-        <p>Chess is a two-player strategy board game played on a 64-square board. Each player commands an army of pieces with the goal of trapping the other king.</p>
-      </article>
-
-      <article class="card">
-        <h3>How the Pieces Move</h3>
-        <p>Every piece moves in its own way — pawns step forward, bishops slide diagonally, knights jump in an L-shape, and the queen does it all.</p>
-      </article>
-
-      <article class="card">
-        <h3>Basic Rules</h3>
-        <p>Players take turns moving one piece at a time. Learn special moves like castling, en passant, and pawn promotion as you go.</p>
-      </article>
-
-      <article class="card">
-        <h3>How Games Are Won</h3>
-        <p>You win by delivering checkmate — attacking the enemy king so it cannot escape. Games can also end in a draw.</p>
+        <h3>What Is Chess and How Does It Work?</h3>
+        <p>Chess is a two-player strategy game played on a 64-square board. White moves first, and each side starts with 16 pieces that each move in their own way. The main goal is to checkmate the opponent's king, meaning the king is under attack and has no safe escape. Games can also end by resignation, timeout, stalemate, or draw.</p>
+        <p>What makes chess fun is the strategy behind every move. Players create plans, attack and defend, set traps, win material, promote pawns, and use tactics like forks, pins, and checkmates to outthink their opponent. You can play chess on a physical board with friends or in tournaments, and you can also play online through websites and apps.</p>
       </article>
     </div>
+
+    <p class="learn-history-line">To understand how chess became one of the world's most famous strategy board games — and to get more familiar with common chess terms — view its history and key terms below.</p>
+    <button type="button" class="btn btn-primary" id="historyBtn">Chess History &amp; Terms</button>
   </section>
+
+  <!-- ===================== CHESS HISTORY MODAL ===================== -->
+  <div class="modal-overlay" id="historyModal" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle" hidden>
+    <div class="modal">
+      <button type="button" class="modal-close" id="historyClose" aria-label="Close">&times;</button>
+      <h3 id="historyModalTitle">Chess History &amp; Terms</h3>
+      <p>Chess has ancient roots, growing out of early strategy games played many centuries ago. Over time, the rules changed and the modern version of chess we know today gradually took shape.</p>
+      <p>As it spread from region to region, chess became a global competitive game, with champions, clubs, and worldwide tournaments. Today it is enjoyed in every way imaginable — casually with friends, online through apps and websites, in local clubs, and in major international tournaments.</p>
+
+      <h4 class="modal-subtitle">Key Terms</h4>
+      <dl class="modal-terms">
+        <dt>Checkmate</dt>
+        <dd>The king is under attack and has no legal way to escape. This ends the game and wins it.</dd>
+
+        <dt>Stalemate</dt>
+        <dd>A player has no legal moves but their king is not in check. The game ends in a draw.</dd>
+
+        <dt>Blunder</dt>
+        <dd>A bad move that loses material or the game. Everyone makes them — spotting yours helps you improve.</dd>
+
+        <dt>Fork</dt>
+        <dd>One piece attacks two or more enemy pieces at the same time, so your opponent can't save them all.</dd>
+
+        <dt>Pin</dt>
+        <dd>A piece is stuck in place because moving it would expose a more valuable piece behind it.</dd>
+
+        <dt>Promotion</dt>
+        <dd>When a pawn reaches the far side of the board, it turns into a stronger piece — usually a queen.</dd>
+
+        <dt>Elo</dt>
+        <dd>A number that estimates a player's strength. It goes up when you win and down when you lose.</dd>
+      </dl>
+    </div>
+  </div>
 
   <!-- ===================== IMPROVEMENT ===================== -->
   <section id="improvement" class="section">
     <h2 class="section-title">Openings, Endgames, and Improvement</h2>
-    <p class="section-intro">Chess improvement is not only about memorizing moves. Strong players build skill by learning opening plans, studying endgames, solving tactics, reviewing mistakes, and practicing games over time.</p>
+    <p class="section-intro">Chess is not just about memorizing moves. It is a deep strategy game built on understanding patterns, plans, and positions. Players improve by learning openings, studying endgames, solving tactics, playing practice games, reviewing mistakes, and building better study habits over time.</p>
 
     <div class="card-grid">
       <article class="card">
@@ -94,13 +117,13 @@
       </article>
 
       <article class="card">
-        <h3>Tactics and Game Review</h3>
-        <p>Tactics and puzzles train your eye to spot patterns like forks, pins, skewers, discovered attacks, and checkmates. Reviewing your own games afterward shows you the mistakes you keep repeating, so you can stop making them.</p>
+        <h3>Tactics and Study Habits</h3>
+        <p>Tactics and puzzles build pattern recognition, training your eye to spot ideas like forks, pins, skewers, discovered attacks, and checkmates. Good study habits make this stick: solve puzzles consistently, read chess books, watch instructional videos, and learn from stronger players.</p>
       </article>
 
       <article class="card">
-        <h3>Practice, Online Elo, and Study Habits</h3>
-        <p>Playing games on Chess.com or Lichess is the best way to gain real experience. Your online Elo rating gives a rough sense of your progress, but true improvement comes from playing, reviewing, and studying a little at a time, consistently.</p>
+        <h3>Practice Games, Online Elo, and Review</h3>
+        <p>Playing online games on Chess.com or Lichess helps you gain real experience, and your online Elo rating gives a rough way to track your progress. Reviewing and analyzing your own games helps you understand your mistakes and improve. Online chess offers different formats and is fun, user-friendly, and easy to practice with.</p>
       </article>
     </div>
   </section>

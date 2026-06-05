@@ -21,3 +21,42 @@ navLinks.forEach(function (link) {
     }
   });
 });
+
+/* =====================================================
+   CHESS HISTORY MODAL
+   Opens a simple popup explaining the history of chess.
+   Closes via the X button, clicking outside, or Escape.
+   ===================================================== */
+const historyBtn = document.getElementById("historyBtn");
+const historyModal = document.getElementById("historyModal");
+const historyClose = document.getElementById("historyClose");
+
+function openHistoryModal() {
+  historyModal.hidden = false;
+}
+
+function closeHistoryModal() {
+  historyModal.hidden = true;
+}
+
+if (historyBtn && historyModal && historyClose) {
+  // Open when the Chess History button is clicked
+  historyBtn.addEventListener("click", openHistoryModal);
+
+  // Close with the X button
+  historyClose.addEventListener("click", closeHistoryModal);
+
+  // Close when clicking on the dim overlay (outside the popup card)
+  historyModal.addEventListener("click", function (event) {
+    if (event.target === historyModal) {
+      closeHistoryModal();
+    }
+  });
+
+  // Close when pressing the Escape key
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !historyModal.hidden) {
+      closeHistoryModal();
+    }
+  });
+}
