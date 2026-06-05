@@ -407,12 +407,43 @@ body {
 }
 
 .sq {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: clamp(1.1rem, 5vw, 2rem);
   line-height: 1;
   user-select: none;
+}
+
+/* Small instruction shown above the board */
+.board-hint {
+  margin: 26px 0 0;
+  text-align: center;
+  color: #ff1f1f; /* bright, slightly neon red against the cream background */
+  font-weight: 600;
+}
+
+/* Squares that hold a piece get a pointer cursor */
+.sq.clickable {
+  cursor: pointer;
+}
+
+/* The piece the user clicked on */
+.sq.selected::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 3px var(--gold);
+}
+
+/* Bright gold highlight on every square the selected piece can move to */
+.sq.hint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(224, 181, 82, 0.55); /* bright gold tint */
+  box-shadow: inset 0 0 0 2px var(--gold);
 }
 
 .sq.light {
@@ -472,11 +503,12 @@ body {
   color: var(--brown-dark);
   font-weight: 600;
   margin-bottom: 2px;
+  font-size: 0.92rem;
 }
 
 .term-def {
   color: var(--brown);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 600px) {

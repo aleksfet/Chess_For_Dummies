@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess For Dummies</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
 
@@ -62,16 +62,19 @@
       </article>
     </div>
 
-    <!-- Decorative (non-playable) chessboard -->
-    <div class="chessboard" aria-hidden="true">
-      <div class="sq light">♜</div><div class="sq dark">♞</div><div class="sq light">♝</div><div class="sq dark">♛</div><div class="sq light">♚</div><div class="sq dark">♝</div><div class="sq light">♞</div><div class="sq dark">♜</div>
-      <div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div>
-      <div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div>
-      <div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div>
-      <div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div>
-      <div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div>
-      <div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div>
-      <div class="sq dark piece-white">♜</div><div class="sq light piece-white">♞</div><div class="sq dark piece-white">♝</div><div class="sq light piece-white">♛</div><div class="sq dark piece-white">♚</div><div class="sq light piece-white">♝</div><div class="sq dark piece-white">♞</div><div class="sq light piece-white">♜</div>
+    <!-- Beginner learning tool: click a piece to see how it moves -->
+    <p class="board-hint">Click a piece to see how it moves.</p>
+
+    <!-- Interactive (non-playable) chessboard -->
+    <div class="chessboard">
+      <div class="sq light" data-row="0" data-col="0" data-piece="rook" data-color="black">♜</div><div class="sq dark" data-row="0" data-col="1" data-piece="knight" data-color="black">♞</div><div class="sq light" data-row="0" data-col="2" data-piece="bishop" data-color="black">♝</div><div class="sq dark" data-row="0" data-col="3" data-piece="queen" data-color="black">♛</div><div class="sq light" data-row="0" data-col="4" data-piece="king" data-color="black">♚</div><div class="sq dark" data-row="0" data-col="5" data-piece="bishop" data-color="black">♝</div><div class="sq light" data-row="0" data-col="6" data-piece="knight" data-color="black">♞</div><div class="sq dark" data-row="0" data-col="7" data-piece="rook" data-color="black">♜</div>
+      <div class="sq dark" data-row="1" data-col="0" data-piece="pawn" data-color="black">♟</div><div class="sq light" data-row="1" data-col="1" data-piece="pawn" data-color="black">♟</div><div class="sq dark" data-row="1" data-col="2" data-piece="pawn" data-color="black">♟</div><div class="sq light" data-row="1" data-col="3" data-piece="pawn" data-color="black">♟</div><div class="sq dark" data-row="1" data-col="4" data-piece="pawn" data-color="black">♟</div><div class="sq light" data-row="1" data-col="5" data-piece="pawn" data-color="black">♟</div><div class="sq dark" data-row="1" data-col="6" data-piece="pawn" data-color="black">♟</div><div class="sq light" data-row="1" data-col="7" data-piece="pawn" data-color="black">♟</div>
+      <div class="sq light" data-row="2" data-col="0"></div><div class="sq dark" data-row="2" data-col="1"></div><div class="sq light" data-row="2" data-col="2"></div><div class="sq dark" data-row="2" data-col="3"></div><div class="sq light" data-row="2" data-col="4"></div><div class="sq dark" data-row="2" data-col="5"></div><div class="sq light" data-row="2" data-col="6"></div><div class="sq dark" data-row="2" data-col="7"></div>
+      <div class="sq dark" data-row="3" data-col="0"></div><div class="sq light" data-row="3" data-col="1"></div><div class="sq dark" data-row="3" data-col="2"></div><div class="sq light" data-row="3" data-col="3"></div><div class="sq dark" data-row="3" data-col="4"></div><div class="sq light" data-row="3" data-col="5"></div><div class="sq dark" data-row="3" data-col="6"></div><div class="sq light" data-row="3" data-col="7"></div>
+      <div class="sq light" data-row="4" data-col="0"></div><div class="sq dark" data-row="4" data-col="1"></div><div class="sq light" data-row="4" data-col="2"></div><div class="sq dark" data-row="4" data-col="3"></div><div class="sq light" data-row="4" data-col="4"></div><div class="sq dark" data-row="4" data-col="5"></div><div class="sq light" data-row="4" data-col="6"></div><div class="sq dark" data-row="4" data-col="7"></div>
+      <div class="sq dark" data-row="5" data-col="0"></div><div class="sq light" data-row="5" data-col="1"></div><div class="sq dark" data-row="5" data-col="2"></div><div class="sq light" data-row="5" data-col="3"></div><div class="sq dark" data-row="5" data-col="4"></div><div class="sq light" data-row="5" data-col="5"></div><div class="sq dark" data-row="5" data-col="6"></div><div class="sq light" data-row="5" data-col="7"></div>
+      <div class="sq light piece-white" data-row="6" data-col="0" data-piece="pawn" data-color="white">♟</div><div class="sq dark piece-white" data-row="6" data-col="1" data-piece="pawn" data-color="white">♟</div><div class="sq light piece-white" data-row="6" data-col="2" data-piece="pawn" data-color="white">♟</div><div class="sq dark piece-white" data-row="6" data-col="3" data-piece="pawn" data-color="white">♟</div><div class="sq light piece-white" data-row="6" data-col="4" data-piece="pawn" data-color="white">♟</div><div class="sq dark piece-white" data-row="6" data-col="5" data-piece="pawn" data-color="white">♟</div><div class="sq light piece-white" data-row="6" data-col="6" data-piece="pawn" data-color="white">♟</div><div class="sq dark piece-white" data-row="6" data-col="7" data-piece="pawn" data-color="white">♟</div>
+      <div class="sq dark piece-white" data-row="7" data-col="0" data-piece="rook" data-color="white">♜</div><div class="sq light piece-white" data-row="7" data-col="1" data-piece="knight" data-color="white">♞</div><div class="sq dark piece-white" data-row="7" data-col="2" data-piece="bishop" data-color="white">♝</div><div class="sq light piece-white" data-row="7" data-col="3" data-piece="queen" data-color="white">♛</div><div class="sq dark piece-white" data-row="7" data-col="4" data-piece="king" data-color="white">♚</div><div class="sq light piece-white" data-row="7" data-col="5" data-piece="bishop" data-color="white">♝</div><div class="sq dark piece-white" data-row="7" data-col="6" data-piece="knight" data-color="white">♞</div><div class="sq light piece-white" data-row="7" data-col="7" data-piece="rook" data-color="white">♜</div>
     </div>
 
     <p class="learn-history-line">To understand how chess became one of the world's most famous strategy board games — and to get more familiar with common chess terms — view its history and key terms below.</p>
@@ -129,6 +132,14 @@
         <div class="term">
           <span class="term-name">Battery</span>
           <span class="term-def">When two or more pieces line up to attack together, often with one piece supporting or protecting another piece's attack.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Threefold Repetition</span>
+          <span class="term-def">A draw rule where the same position appears three times during a game, with the same player to move.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">50-Move Rule</span>
+          <span class="term-def">A draw rule where either player can claim a draw if 50 moves pass without a pawn move or a capture.</span>
         </div>
       </div>
     </div>
@@ -282,6 +293,6 @@
     <p>♔ Chess For Dummies — A beginner-friendly chess learning project.</p>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
