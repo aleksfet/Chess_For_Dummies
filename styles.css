@@ -363,7 +363,7 @@ body {
 /* The popup card itself */
 .modal {
   position: relative;
-  max-width: 520px;
+  max-width: 720px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
@@ -391,6 +391,54 @@ body {
   margin-bottom: 0;
 }
 
+/* Decorative chessboard under the Learn card */
+.chessboard {
+  width: 100%;
+  max-width: 360px;
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--brown-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+.sq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.1rem, 5vw, 2rem);
+  line-height: 1;
+  user-select: none;
+}
+
+.sq.light {
+  background-color: #d9c39a; /* darker cream for better piece contrast */
+}
+
+.sq.dark {
+  background-color: #a3742b; /* deeper brown/gold */
+}
+
+/* Dark side pieces (top of board) */
+.sq {
+  color: var(--brown-dark);
+}
+
+/* White side pieces (bottom of board) rendered lighter, with an outline so
+   they stay visible on both light and dark squares */
+.sq.piece-white {
+  color: #fbf6e9;
+  text-shadow:
+    -1px -1px 0 var(--brown-dark),
+    1px -1px 0 var(--brown-dark),
+    -1px 1px 0 var(--brown-dark),
+    1px 1px 0 var(--brown-dark);
+}
+
 .modal-subtitle {
   color: var(--brown-dark);
   margin-top: 18px;
@@ -398,22 +446,43 @@ body {
   font-size: 1.1rem;
 }
 
-.modal-terms {
-  margin: 0;
-}
-
-.modal-terms dt {
-  color: var(--brown-dark);
+/* Links inside the history modal */
+.modal a {
+  color: var(--gold);
   font-weight: 600;
 }
 
-.modal-terms dd {
-  color: var(--brown);
-  margin: 0 0 10px 0;
+.modal a:hover {
+  color: var(--gold-light);
 }
 
-.modal-terms dd:last-child {
-  margin-bottom: 0;
+/* Two-column term grid on desktop, single column on mobile */
+.modal-terms {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+}
+
+.term {
+  display: flex;
+  flex-direction: column;
+}
+
+.term-name {
+  color: var(--brown-dark);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.term-def {
+  color: var(--brown);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .modal-terms {
+    grid-template-columns: 1fr;
+  }
 }
 
 .modal-close {

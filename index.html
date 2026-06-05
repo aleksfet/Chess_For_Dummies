@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess For Dummies</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -62,6 +62,18 @@
       </article>
     </div>
 
+    <!-- Decorative (non-playable) chessboard -->
+    <div class="chessboard" aria-hidden="true">
+      <div class="sq light">♜</div><div class="sq dark">♞</div><div class="sq light">♝</div><div class="sq dark">♛</div><div class="sq light">♚</div><div class="sq dark">♝</div><div class="sq light">♞</div><div class="sq dark">♜</div>
+      <div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div><div class="sq dark">♟</div><div class="sq light">♟</div>
+      <div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div>
+      <div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div>
+      <div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div>
+      <div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div><div class="sq dark"></div><div class="sq light"></div>
+      <div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div><div class="sq light piece-white">♟</div><div class="sq dark piece-white">♟</div>
+      <div class="sq dark piece-white">♜</div><div class="sq light piece-white">♞</div><div class="sq dark piece-white">♝</div><div class="sq light piece-white">♛</div><div class="sq dark piece-white">♚</div><div class="sq light piece-white">♝</div><div class="sq dark piece-white">♞</div><div class="sq light piece-white">♜</div>
+    </div>
+
     <p class="learn-history-line">To understand how chess became one of the world's most famous strategy board games — and to get more familiar with common chess terms — view its history and key terms below.</p>
     <button type="button" class="btn btn-primary" id="historyBtn">Chess History &amp; Terms</button>
   </section>
@@ -71,32 +83,54 @@
     <div class="modal">
       <button type="button" class="modal-close" id="historyClose" aria-label="Close">&times;</button>
       <h3 id="historyModalTitle">Chess History &amp; Terms</h3>
-      <p>Chess has ancient roots, growing out of early strategy games played many centuries ago. Over time, the rules changed and the modern version of chess we know today gradually took shape.</p>
-      <p>As it spread from region to region, chess became a global competitive game, with champions, clubs, and worldwide tournaments. Today it is enjoyed in every way imaginable — casually with friends, online through apps and websites, in local clubs, and in major international tournaments.</p>
 
-      <h4 class="modal-subtitle">Key Terms</h4>
-      <dl class="modal-terms">
-        <dt>Checkmate</dt>
-        <dd>The king is under attack and has no legal way to escape. This ends the game and wins it.</dd>
+      <h4 class="modal-subtitle">Chess History</h4>
+      <p>Chess has ancient roots, growing out of early strategy games played many centuries ago. Early forms of chess developed and changed over centuries, and the modern game we know today gradually became popular around the world. In time, chess became a serious competitive game, organized through clubs, tournaments, and world champions. More recently, online chess — websites, apps, and streaming — made the game even more accessible, and the COVID-era online boom introduced millions of new players to chess.</p>
+      <p>For a deeper history, view <a href="https://www.chess.com/article/view/history-of-chess" target="_blank" rel="noopener noreferrer">Chess.com's History of Chess article</a>.</p>
 
-        <dt>Stalemate</dt>
-        <dd>A player has no legal moves but their king is not in check. The game ends in a draw.</dd>
-
-        <dt>Blunder</dt>
-        <dd>A bad move that loses material or the game. Everyone makes them — spotting yours helps you improve.</dd>
-
-        <dt>Fork</dt>
-        <dd>One piece attacks two or more enemy pieces at the same time, so your opponent can't save them all.</dd>
-
-        <dt>Pin</dt>
-        <dd>A piece is stuck in place because moving it would expose a more valuable piece behind it.</dd>
-
-        <dt>Promotion</dt>
-        <dd>When a pawn reaches the far side of the board, it turns into a stronger piece — usually a queen.</dd>
-
-        <dt>Elo</dt>
-        <dd>A number that estimates a player's strength. It goes up when you win and down when you lose.</dd>
-      </dl>
+      <h4 class="modal-subtitle">Key Chess Terms</h4>
+      <div class="modal-terms">
+        <div class="term">
+          <span class="term-name">Checkmate</span>
+          <span class="term-def">The king is under attack with no legal escape. This ends and wins the game.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Stalemate</span>
+          <span class="term-def">A player has no legal moves but isn't in check. The game ends in a draw.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Blunder</span>
+          <span class="term-def">A bad move that loses material or the game. Spotting yours helps you improve.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Fork</span>
+          <span class="term-def">One piece attacks two or more enemy pieces at once, so they can't all be saved.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Pin</span>
+          <span class="term-def">A piece can't move because doing so would expose a more valuable piece behind it.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Promotion</span>
+          <span class="term-def">A pawn reaching the far side turns into a stronger piece — usually a queen.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Elo</span>
+          <span class="term-def">A number estimating a player's strength. It rises with wins and falls with losses.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">OTB</span>
+          <span class="term-def">"Over the board" — playing chess in person on a real board, not online.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">En Passant</span>
+          <span class="term-def">A special pawn capture where a pawn can capture another pawn that just moved two squares forward, as if it had only moved one square.</span>
+        </div>
+        <div class="term">
+          <span class="term-name">Battery</span>
+          <span class="term-def">When two or more pieces line up to attack together, often with one piece supporting or protecting another piece's attack.</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -248,6 +282,6 @@
     <p>♔ Chess For Dummies — A beginner-friendly chess learning project.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
