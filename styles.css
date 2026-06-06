@@ -369,20 +369,146 @@ body {
 /* =====================================================
    LEGEND CARDS
    ===================================================== */
+/* Legends: fit all five cards in one row on desktop, wrapping when narrower.
+   A tighter gap gives each card a little more width. */
+.card-grid.legends {
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 16px;
+}
+
+/* Time Controls + Chess Variants sit side by side on desktop, equal width
+   and equal height so the two areas stay balanced. */
+.tcv-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+/* Each column stacks heading → intro → box and stretches to equal height */
+.tcv-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subsection heading + intro (Time Controls / Chess Variants) */
+.subsection-title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.subsection-intro {
+  text-align: center;
+  color: var(--brown);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin: 0 auto 14px;
+}
+
+/* Reserve equal space for the intros so both boxes start at the same height */
+.tcv-col .subsection-intro {
+  min-height: 4rem;
+}
+
+/* Compact wood/tan container holding a labeled list */
+.timecontrol-card {
+  background: linear-gradient(180deg, var(--cream-light), var(--wood));
+  border: 1px solid #c9a86a;
+  border-top: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 10px var(--shadow);
+  flex: 1; /* fill the column so both boxes match height */
+}
+
+/* Time Controls box anchors a small decorative clock in its corner.
+   The clock is absolutely positioned so it never affects the list layout. */
+.timecontrol-card--clock {
+  position: relative;
+}
+
+.timecontrol-clock {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: auto;
+  opacity: 0.75; /* blend gently into the cream/wood theme */
+  pointer-events: none;
+}
+
+/* Two-column mini-list of labeled entries inside the container */
+.timecontrol-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 22px;
+}
+
+.timecontrol-item dt {
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 2px;
+}
+
+.timecontrol-item dd {
+  margin: 0;
+  color: var(--brown);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Tablet: stack the two boxes, but keep the inner two-column mini-list */
+@media (max-width: 820px) {
+  .tcv-row {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* No need to reserve intro space once the areas are stacked */
+  .tcv-col .subsection-intro {
+    min-height: 0;
+  }
+}
+
+/* Phone: collapse the inner mini-list into a single column */
+@media (max-width: 600px) {
+  .timecontrol-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .legend-card {
   text-align: center;
+  padding: 18px 20px; /* slightly shorter than the default card padding */
+  /* Subtle warm "legend" accent that stays within the cream/wood theme */
+  background: linear-gradient(180deg, #fff6e8, #f4dcb8);
+  border-color: #dcb775;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(200, 150, 43, 0.22); /* soft gold-tinted glow */
+}
+
+/* Warmer initials circle to reinforce the legend accent */
+.legend-card .legend-initials {
+  background: linear-gradient(160deg, #6b4524, #b07e2a);
+  color: var(--gold-light);
 }
 
 .legend-initials {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 14px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--brown-dark);
   color: var(--gold-light);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: bold;
   border-radius: 50%;
 }
@@ -391,7 +517,7 @@ body {
   color: var(--gold);
   font-weight: 600;
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* =====================================================
